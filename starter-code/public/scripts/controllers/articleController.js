@@ -4,7 +4,7 @@ var app = app || {};
 (function(module) {
   const articleController = {};
 
-  // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+  // DONE COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
   //ANSWER: The function invokes the articleView.index function passing through the articles attached to context argument. This lives on articleView.js.
   articleController.index = (ctx) => app.articleView.index(ctx.articles);
 
@@ -15,7 +15,7 @@ var app = app || {};
       next();
     };
 
-    // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+    // DONE COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
     //ANSWER: This helps load the specific article located in the database based on the article id field. This value is pulled from the url by using ctx.params.article_id.
 
     app.Article.findWhere('article_id', ctx.params.article_id, articleData);
