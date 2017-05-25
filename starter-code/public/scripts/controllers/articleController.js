@@ -5,7 +5,7 @@ var app = app || {};
   const articleController = {};
 
   // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
-  // (put your response in a comment here)
+  //ANSWER: The function invokes the articleView.index function passing through the articles attached to context argument. This lives on articleView.js.
   articleController.index = (ctx) => app.articleView.index(ctx.articles);
 
   // REVIEW: Middleware for grabbing one article by ID:
@@ -16,7 +16,8 @@ var app = app || {};
     };
 
     // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
-    // (put your response in a comment here)
+    //ANSWER: This helps load the specific article located in the database based on the article id field. This value is pulled from the url by using ctx.params.article_id.
+
     app.Article.findWhere('article_id', ctx.params.article_id, articleData);
   };
 
